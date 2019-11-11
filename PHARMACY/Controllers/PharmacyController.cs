@@ -14,10 +14,8 @@ namespace PHARMACY.Controllers
     {
       data = context;
     }
-    public IActionResult Start()
-    {
-      return View();
-    }
+
+    #region Info
     public IActionResult PharmacyInfo()
     {
       return View(data.Pharmacies.ToList());
@@ -30,12 +28,9 @@ namespace PHARMACY.Controllers
     {
       return View(data.Merchandises.ToList());
     }
-    public IActionResult IsAddChanging(int num)
-    {
-      Edition.Edition edition = new Edition.Edition();
-      edition.MerchIsAddChanging(data, num);
-      return Redirect("done");
-    }
+    #endregion
+
+    #region Delete
     public IActionResult MerchDelete(int num)
     {
       Edition.Edition edition = new Edition.Edition();
@@ -48,6 +43,9 @@ namespace PHARMACY.Controllers
       edition.ProviderDelete(data, num);
       return Redirect("done");
     }
+    #endregion
+
+    #region Add
     public IActionResult ProviderAddForm()
     {     
       return View();
@@ -70,9 +68,23 @@ namespace PHARMACY.Controllers
       edition.MerchAdd(data, provider, name, mg, price, count, sl);
       return Redirect("done");
     }
+    #endregion
+
+    #region Other
+    public IActionResult Start()
+    {
+      return View();
+    }
+    public IActionResult IsAddChanging(int num)
+    {
+      Edition.Edition edition = new Edition.Edition();
+      edition.MerchIsAddChanging(data, num);
+      return Redirect("done");
+    }
     public IActionResult Done()
     {
       return View();
     }
+    #endregion
   }
 }
