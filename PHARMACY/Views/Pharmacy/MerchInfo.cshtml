@@ -1,0 +1,39 @@
+﻿@model List<PHARMACY.Models.Merchandise>
+@{
+    ViewData["Title"] = "MerchInfo";
+}
+<title>Merchandises</title>
+<h2>MerchInfo</h2>
+<div>
+    <table border="1">
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>MG</td>
+            <td>Prise</td>
+            <td>Count</td>
+            <td>ShelfLife</td>
+            <td>IsAdd</td>
+            <td>Edit</td>
+            <td>Delete</td>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ID</td>
+                <td>@item.Name</td>
+                <td>@item.MG</td>
+                <td>@item.Prise</td>
+                <td>@item.Count</td>
+                <td>@item.ShelfLife</td>
+                <td>@item.IsAdd</td>
+                <td><a href="https://localhost:44324/pharmacy/isaddchanging?num=@item.ID" class="button">Change</a></td>
+                <td><a href="https://localhost:44324/pharmacy/merchdelete?num=@item.ID" class="button">Delete</a></td>
+            </tr>
+        }
+    </table>
+</div>
+<a href="https://localhost:44324/pharmacy/merchaddform" class="button">Add Merch</a>
+<form action="https://localhost:44324/pharmacy/start">
+    <input type="submit" value="InStart" />
+</form>

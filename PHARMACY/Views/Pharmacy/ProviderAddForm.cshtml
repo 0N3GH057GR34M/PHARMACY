@@ -1,0 +1,10 @@
+﻿@{
+    ViewData["Title"] = "ProviderAddForm";
+}
+<title>ProviderAddForm</title>
+<h2>ProviderAddForm</h2>
+@using (Html.BeginForm("ProviderAdd", "Pharmacy"))
+{
+    <div>Name</div>@Html.TextBox("name")
+    <input type="submit" value="Confirm" />
+}

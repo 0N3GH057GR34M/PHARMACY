@@ -1,0 +1,27 @@
+﻿@model List<PHARMACY.Models.Provider>
+@{
+    ViewData["Title"] = "ProviderInfo";
+}
+<title>Providers</title>
+<h2>ProviderInfo</h2>
+<div>
+    <table border="1">
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Delete</td>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ID</td>
+                <td>@item.Name</td>
+                <td><a href="https://localhost:44324/pharmacy/providerdelete?num=@item.ID" class="button">Delete</a></td>
+            </tr>
+        }
+    </table>
+</div>
+<a href="https://localhost:44324/pharmacy/provideraddform" class="button">Add Provider</a>
+<form action="https://localhost:44324/pharmacy/start">
+    <input type="submit" value="InStart" />
+</form>

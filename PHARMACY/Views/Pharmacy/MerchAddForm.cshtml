@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "MerchAddForm";
+}
+<title>MerchAddForm</title>
+<h2>MerchAddForm</h2>
+@using (Html.BeginForm("MerchAdd", "Pharmacy"))
+{
+    <div>Provider</div>@Html.TextBox("provider")
+    <div>Name</div>@Html.TextBox("name")
+    <div>MG</div>@Html.TextBox("mg")
+    <div>Price</div>@Html.TextBox("price")
+    <div>Count</div>@Html.TextBox("count")
+    <div>Shelf Life</div>@Html.TextBox("sl")
+    <br>
+    <input type="submit" value="Confirm" />
+}

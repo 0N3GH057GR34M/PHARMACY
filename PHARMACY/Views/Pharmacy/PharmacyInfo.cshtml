@@ -1,0 +1,18 @@
+﻿@model List<PHARMACY.Models.Pharmacy>
+@{
+    ViewData["Title"] = "PharmacyInfo";
+}
+<title>Pharmacies</title>
+<h2>PharmacyInfo</h2>
+<div>
+    <table border="1">
+        <tr><td>ID</td><td>Name</td><td>Current Date</td></tr>
+        @foreach (var item in Model)
+        {
+            <tr><td>@item.ID</td><td>@item.Name</td><td>@item.CurrentDate</td></tr>
+        }
+    </table>
+</div>
+<form action="https://localhost:44324/pharmacy/start">
+    <input type="submit" value="InStart" />
+</form>
