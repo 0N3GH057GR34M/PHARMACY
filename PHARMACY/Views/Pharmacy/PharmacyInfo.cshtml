@@ -6,10 +6,20 @@
 <h2>PharmacyInfo</h2>
 <div>
     <table border="1">
-        <tr><td>ID</td><td>Name</td><td>Current Date</td></tr>
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Current Date</td>
+            <td></td>
+        </tr>
         @foreach (var item in Model)
         {
-            <tr><td>@item.ID</td><td>@item.Name</td><td>@item.CurrentDate</td></tr>
+            <tr>
+                <td>@item.ID</td>
+                <td>@item.Name</td>
+                <td>@item.CurrentDate</td>
+                <td><a href="https://localhost:44324/pharmacy/provideraddform" class="button">Add Provider</a></td>
+            </tr>
         }
     </table>
 </div>

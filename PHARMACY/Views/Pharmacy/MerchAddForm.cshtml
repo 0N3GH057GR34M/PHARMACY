@@ -1,11 +1,12 @@
-﻿@{
+﻿@model int
+@{
     ViewData["Title"] = "MerchAddForm";
 }
 <title>MerchAddForm</title>
 <h2>MerchAddForm</h2>
 @using (Html.BeginForm("MerchAdd", "Pharmacy"))
 {
-    <div>Provider</div>@Html.TextBox("provider")
+    <div>ID</div>@Html.TextBox("p", Model)
     <div>Name</div>@Html.TextBox("name")
     <div>MG</div>@Html.TextBox("mg")
     <div>Price</div>@Html.TextBox("price")

@@ -12,10 +12,11 @@
             <td>MG</td>
             <td>Prise</td>
             <td>Count</td>
-            <td>ShelfLife</td>
+            <td>Shelf Life</td>
             <td>IsAdd</td>
-            <td>Edit</td>
-            <td>Delete</td>
+            <td>Provider ID</td>
+            <td></td>
+            <td></td>
         </tr>
         @foreach (var item in Model)
         {
@@ -27,13 +28,13 @@
                 <td>@item.Count</td>
                 <td>@item.ShelfLife</td>
                 <td>@item.IsAdd</td>
+                <td>@item.ProviderID</td>
                 <td><a href="https://localhost:44324/pharmacy/isaddchanging?num=@item.ID" class="button">Change</a></td>
                 <td><a href="https://localhost:44324/pharmacy/merchdelete?num=@item.ID" class="button">Delete</a></td>
             </tr>
         }
     </table>
 </div>
-<a href="https://localhost:44324/pharmacy/merchaddform" class="button">Add Merch</a>
 <form action="https://localhost:44324/pharmacy/start">
     <input type="submit" value="InStart" />
 </form>

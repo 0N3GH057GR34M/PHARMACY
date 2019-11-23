@@ -9,7 +9,8 @@
         <tr>
             <td>ID</td>
             <td>Name</td>
-            <td>Delete</td>
+            <td></td>
+            <td></td>
         </tr>
         @foreach (var item in Model)
         {
@@ -17,11 +18,11 @@
                 <td>@item.ID</td>
                 <td>@item.Name</td>
                 <td><a href="https://localhost:44324/pharmacy/providerdelete?num=@item.ID" class="button">Delete</a></td>
+                <td><a href="https://localhost:44324/pharmacy/merchaddform?p=@item.ID" class="button">Add Merch</a></td>
             </tr>
         }
     </table>
 </div>
-<a href="https://localhost:44324/pharmacy/provideraddform" class="button">Add Provider</a>
 <form action="https://localhost:44324/pharmacy/start">
     <input type="submit" value="InStart" />
 </form>

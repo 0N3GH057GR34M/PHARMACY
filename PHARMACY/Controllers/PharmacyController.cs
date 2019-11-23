@@ -35,13 +35,13 @@ namespace PHARMACY.Controllers
     {
       Edition.Edition edition = new Edition.Edition();
       edition.MerchDelete(data, num);
-      return Redirect("done");
+      return Redirect("merchinfo");
     }
     public IActionResult ProviderDelete(int num)
     {
       Edition.Edition edition = new Edition.Edition();
       edition.ProviderDelete(data, num);
-      return Redirect("done");
+      return Redirect("providerinfo");
     }
     #endregion
 
@@ -55,18 +55,18 @@ namespace PHARMACY.Controllers
     {
       Edition.Edition edition = new Edition.Edition();
       edition.ProviderAdd(data, name);
-      return Redirect("done");
+      return Redirect("providerinfo");
     }
-    public IActionResult MerchAddForm()
+    public IActionResult MerchAddForm(int p)
     {
-      return View();
+      return View(p);
     }
     [HttpPost]
-    public IActionResult MerchAdd(int provider, string name, int mg, double price, int count, int sl)
+    public IActionResult MerchAdd(int p, string name, int mg, double price, int count, int sl)
     {
       Edition.Edition edition = new Edition.Edition();
-      edition.MerchAdd(data, provider, name, mg, price, count, sl);
-      return Redirect("done");
+      edition.MerchAdd(data, p, name, mg, price, count, sl);
+      return Redirect("merchinfo");
     }
     #endregion
 
@@ -79,11 +79,7 @@ namespace PHARMACY.Controllers
     {
       Edition.Edition edition = new Edition.Edition();
       edition.MerchIsAddChanging(data, num);
-      return Redirect("done");
-    }
-    public IActionResult Done()
-    {
-      return View();
+      return Redirect("merchinfo");
     }
     #endregion
   }
