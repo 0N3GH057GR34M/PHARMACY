@@ -1,0 +1,34 @@
+﻿@model List<PHARMACY.Models.Merchandise>
+@{
+    ViewData["Title"] = "AddedMerches";
+}
+<title>Merchandises</title>
+<h2>AddedMerches</h2>
+<div>
+    <table border="1">
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>MG</td>
+            <td>Price</td>
+            <td>ShelfLife</td>
+            <td>Count</td>
+            <td>IsAdd</td>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ID</td>
+                <td>@item.Name</td>
+                <td>@item.MG</td>
+                <td>@item.Prise</td>
+                <td>@item.ShelfLife</td>
+                <td>@item.Count</td>
+                <td>@item.IsAdd</td>
+            </tr>
+        }
+    </table>
+</div>
+<form action="https://localhost:44324/pharmacy/start">
+    <input type="submit" value="InStart" />
+</form>

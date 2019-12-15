@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using PHARMACY.Context;
+using PHARMACY.Models;
 
 namespace PHARMACY.Controllers
 {
@@ -80,6 +81,18 @@ namespace PHARMACY.Controllers
       Edition.Edition edition = new Edition.Edition();
       edition.MerchIsAddChanging(data, num);
       return Redirect("merchinfo");
+    }
+    public IActionResult AddedMerches()
+    {
+      var added = new List<Merchandise>();
+      foreach(var item in data.Merchandises.ToList())
+      {
+        if(item.IsAdd == true)
+        {
+          added.Add(item);
+        }
+      }
+      return View(added);
     }
     #endregion
   }
